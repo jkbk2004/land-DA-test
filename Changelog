@@ -1,0 +1,49 @@
+Singularity setup on hera
+	1. by default, singularity can be run on hera
+	2. /home/Jong.Kim
+	3. create .singularity on somewhere scratch directory and soft link to home directory
+	4. cd /home/Jong.Kim
+	5. ln -s /scratch2/NCEPDEV/marine/Jong.Kim/.singularity .
+	6. Or build sinularity image: singularity build ubuntu20.04-intel-spack-landda.img docker://noaaepic/ubuntu20.04-intel-landda:develo
+wget https://epic-sandbox-srw.s3.amazonaws.com/land-da-data.tar.gz
+	1. cd /scratch2/NCEPDEV/marine/Jong.Kim/test
+	2. wget https://epic-sandbox-srw.s3.amazonaws.com/land-da-data.tar.gz; tar xvfz land-da-data.tar.gz
+Copy /opt/land-offline_workflow to my local path to work on it
+	1. copy /scratch2/NCEPDEV/marine/Jong.Kim/test/ubuntu20.04-intel-spack-landda.img to your directory
+	2. shell into singularity. in my case, I am running on /scratch2/NCEPDEV/marine/Jong.Kim/test
+	3. singularity shell -e -B /scratch2:/scratch2 ubuntu20.04-intel-spack-landda.img
+	4. cd /opt; cp land-offline_workflow /scratch2/NCEPDEV/marine/Jong.Kim/test/land-release
+	5. exit singularity
+Edit LANDDAROOT in submit_cycle.sh
+	1. cd/scratch2/NCEPDEV/marine/Jong.Kim/test/land-release/land-offline_workflow; vi submit_cycle.sh
+	2. according to your acct at line 3: #SBATCH --account=marine-cpu
+	2. at line 23: export LANDDAROOT=/scratch2/NCEPDEV/marine/Jong.Kim/test
+In my case, I moved ubuntu20.04-intel-spack-landda.img to /scratch2/NCEPDEV/marine/Jong.Kim/test/land-release/land-offline_workflow
+	1. cd /scratch2/NCEPDEV/marine/Jong.Kim/test/land-release/land-offl\
+	ine_workflow
+Run salloc and run singularity and run cycle
+	1. salloc --ntasks 6 --qos=debug --time=00:30:00 --account=marine-cpu
+	2. singularity shell -e -B /scratch2:/scratch2 ubuntu20.04-intel-spack-landda.img
+	3. source /opt/spack-stack/.bashenv
+	4. sh ./submit_cycle.sh settings_cycle_test
+Usually, git config helps inside container
+	1. git config --global --add safe.directory /opt/land-offline_workflow
+Fresh build with cmake
+	1. delete and mkdir build at /scratch2/NCEPDEV/marine/Jong.Kim/test/land-release/land-offline_w\
+	orkflow
+	2. cd build 
+	3. ecbuild ..
+	4. make -j 4
+	5. copy new executables to subdirectories
+	6. cp bin/vector2tile_converter.exe ../vector2tile
+	7. cp bin/ufsLandDriver.exe ../ufs-land-driver/run/ufsLand.exe
+	8. cp bin/calcfIMS.exe ../DA_update/IMS_proc/exec/calcfIMS
+	9. cp bin/apply_incr.exe ../DA_update/add_jedi_incr/exec/apply_incr
+fv3_bundle and ioda_bundle can be compiled in same way
+	1. clone bundles or copy over from /opt
+	2. source /opt/spack-stack/.bashenv inside singularity
+	2. cd to the directory
+	3. mkdir build; cd build
+	4. ecbuild ..
+	5. make -j 4
+	

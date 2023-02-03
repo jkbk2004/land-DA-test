@@ -1,0 +1,42 @@
+source /usr/share/lmod/lmod/init/bash
+module use /opt/spack-stack/spack/share/spack/modules/linux-ubuntu20.04-skylake
+module load cmake/3.22.1 intel-oneapi-compilers/2022.1.0 intel-oneapi-mpi/2021.6.0 
+module use /opt/spack-stack/envs/landda/install/modulefiles/Core
+module load stack-intel stack-intel-oneapi-mpi
+module load  antlr/2.7.7
+module load  atlas/0.31.1
+module load  bufr/11.5.0
+module load  cmake/3.22.1
+module load  curl/7.49.1
+module load  ecbuild/3.6.1
+module load  eckit/1.20.2
+module load  eigen/3.3.7
+module load  fckit/0.9.5
+module load  fftw/3.3.10
+module load  gsl/2.7.1
+module load  gsl-lite/0.37.0
+module load  hdf5/1.12.0
+module load  jasper/2.0.25
+module load  json/3.9.1
+module load  json-schema-validator/2.1.0
+module load  libbsd/0.11.5
+module load  libjpeg/2.1.0
+module load  libmd/1.0.4
+module load  libpng/1.6.37
+module load  nccmp/1.9.0.1
+module load  nco/4.9.1
+module load  netcdf-c/4.7.4
+module load  netcdf-fortran/4.5.4
+module load  openblas/0.3.19
+module load  parallel-netcdf/1.12.2
+module load  parallelio/2.5.7
+module load  patchelf/0.15.0
+module load  pkg-config/0.29.2
+module load  py-cython/0.29.32
+module load  py-numpy/1.22.3
+module load  py-pip/22.2.2
+module load  py-setuptools/59.4.0
+module load  py-wheel/0.37.1
+module load  stack-python/3.8.10
+module load  udunits/2.2.28
+module load  zlib/1.2.12, zlib/1.2.13

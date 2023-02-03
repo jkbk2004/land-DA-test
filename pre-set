@@ -1,0 +1,3 @@
+#!/bin/bash -le
+source /opt/spack-stack/.bashenv
+export LD_LIBRARY_PATH=/scratch2/NCEPDEV/marine/Jong.Kim/test/land-offline_workflow/build/lib:$LD_LIBRARY_PATH

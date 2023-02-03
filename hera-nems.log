@@ -1,0 +1,42 @@
+=================================================================================================================
+Report                           Project Report for:nems         
+Report Run:                      Thu 02 Feb 2023 10:51:20 PM  UTC
+Report Period Beginning:         Wed 01 Feb 2023 12:00:00 AM  UTC
+Report Period Ending:            Wed 01 Mar 2023 12:00:00 AM  UTC
+Percentage of Period Elapsed:    7.0%                            
+Percentage of Period Remaining:  93.0%
+=================================================================================================================
+Machines:                                    hera
+Initial Allocation in Hours:              417,406
+Net Allocation Adjustments:                     0
+                                 ----------------
+Adjusted Allocation:                      417,406
+                                                 
+Core Hours Used:                           37,126
+Windfall Core Hours Used:                       0
+                                 ----------------
+Total Core Hours Used:                     37,126
+                                                 
+Project Normalized Shares:               0.009550
+Project Fair Share:                      0.449604
+Project Rank:                               64/93
+                                                 
+Percentage of Period Elapsed:                7.0%
+Percentage of Period Remaining:             93.0%
+Percentage of Allocation Used:               8.9%
+
+User                             Cr-HrUsed    Windfall   TotalUsed       %Used      Jobs
+------------------------------ ----------- ----------- ----------- ----------- ---------
+Bin.Li                               3,433           0       3,433       0.82%       181
+Dusan.Jovic                            777           0         777       0.19%       104
+Fernando.Andrade-maldonado              20           0          20       0.00%         1
+Gerhard.Theurich                       882           0         882       0.21%        48
+Jong.Kim                             6,188           0       6,188       1.48%       308
+Michael.Lueken                      20,016           0      20,016       4.80%     1,118
+Rhaesung.Kim                            36           0          36       0.01%         2
+emc.nemspara                         3,557           0       3,557       0.85%       213
+role.epic                            2,217           0       2,217       0.53%       899
+------------------------------ ----------- ----------- ----------- ----------- ---------
+Total                               37,126           0      37,126       8.89%     2,874
+
+Total Report Runtime: 2.61 seconds (ver. 22.12.07-FJS)

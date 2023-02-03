@@ -1,0 +1,5 @@
+[submodule "IMS_proc"]
+	path = IMS_proc
+	url = https://github.com/NOAA-PSL/land-IMS_proc.git
+	branch = develop
+

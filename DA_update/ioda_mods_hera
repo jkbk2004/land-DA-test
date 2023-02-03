@@ -1,0 +1,21 @@
+# environment for JEDI IODA, from Henry. 
+
+module purge 
+unset LD_LIBRARY_PATH
+unset PYTHONPATH
+#
+#export UFSRNR_STACK=/scratch2/BMC/gsienkf/UFS-RNR/UFS-RNR-stack
+#export JEDI_OPT=/scratch1/NCEPDEV/jcsda/jedipara/opt/modules
+#module use $JEDI_OPT/modulefiles/core
+module use /opt/spack-stack/spack/share/spack/modules/linux-ubuntu20.04-skylake
+module load cmake/3.22.1 intel-oneapi-compilers/2022.1.0 intel-oneapi-mpi/2021.6.0 
+module use /opt/spack-stack/envs/landda/install/modulefiles/Core
+module load stack-intel stack-intel-oneapi-mpi
+
+#
+#export JEDI_LD_LIBRARY_PATH=$LD_LIBRARY_PATH
+#module use -a ${UFSRNR_STACK}/modules
+## this clashes with fv3-jedi. Can't use single environment for both.
+#module load anaconda3
+export LD_LIBRARY_PATH=/opt/ioda-bundle/build/lib:$LD_LIBRARY_PATH
+export PYTHONPATH=/opt/ioda-bundle/build/lib/pyiodaconv:/opt/ioda-bundle/build/lib/python3.8/pyioda
