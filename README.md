@@ -83,3 +83,5 @@ build steps with cmake: jedi stack works ok on orion but need to follow up jedi 
 7. ecbuild ..
 
 8. make -j 1
+
+test
